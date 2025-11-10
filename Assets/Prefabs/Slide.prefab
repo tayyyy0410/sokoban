@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2300359191470767208}
   - component: {fileID: 5530980578888597572}
   - component: {fileID: 8638683022356974601}
+  - component: {fileID: -1134910002682872406}
   m_Layer: 0
   m_Name: Slide
   m_TagString: block
@@ -147,6 +148,21 @@ MonoBehaviour:
     m_RotationOrder: 4
   speed: 5
   lerpSnapDist: 0.1
+  targetPos: {x: 0, y: 0, z: 0}
   canMove: 1
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
+  state: 0
+--- !u!114 &-1134910002682872406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3440354009316116336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13814bdbb529b054a8e88ece6185e0a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeId: 3

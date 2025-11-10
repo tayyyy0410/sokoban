@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class InGameUI : MonoBehaviour
 {
@@ -36,16 +37,25 @@ public class InGameUI : MonoBehaviour
     // === 按钮回调 ===
     public void OnClickRestartLevel()
     {
+     
+        SfxManager.PlayButton();
         GameManager.I.RestartLevel();
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }   
+
     public void OnClickRestartGame()
     {
+        SfxManager.PlayButton();   
         GameManager.I.RestartGame();
     }
 
     public void OnClickNextLevel()
     {
+        SfxManager.PlayButton();
         GameManager.I.NextLevel();
     }
 

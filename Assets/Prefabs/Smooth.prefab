@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5041310604094005506}
   - component: {fileID: 3697565144390560032}
   - component: {fileID: 8244033548029671787}
+  - component: {fileID: 5600580919095159404}
+  - component: {fileID: 6207252064099045808}
   m_Layer: 0
   m_Name: Smooth
   m_TagString: block
@@ -148,9 +150,11 @@ MonoBehaviour:
     m_RotationOrder: 4
   speed: 5
   lerpSnapDist: 0
+  targetPos: {x: 0, y: 0, z: 0}
   canMove: 1
   gridPos: {x: 0, y: 0}
   moveChange: {x: 0, y: 0}
+  state: 0
 --- !u!114 &8244033548029671787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,4 +167,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc54180f852a4c6998dc559bef41b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stuckObj: []
+--- !u!114 &5600580919095159404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3600707358630190731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13814bdbb529b054a8e88ece6185e0a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  speed: 0
+  lerpSnapDist: 0
+  targetPos: {x: 0, y: 0, z: 0}
+  canMove: 0
+  gridPos: {x: 0, y: 0}
+  moveChange: {x: 0, y: 0}
+  state: 0
+  typeId: 1
+--- !u!114 &6207252064099045808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3600707358630190731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2a4fbef461e704a9e681437e982c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
