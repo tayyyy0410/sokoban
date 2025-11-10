@@ -27,7 +27,7 @@ public class MatchManager : MonoBehaviour
         if (!gridManager || gridManager.gridList == null || gridManager.gridList.Count == 0)
             return;
 
-        // 正在执行一轮消除流程时，忽略新的 GridChanged（避免递归）
+     
         if (isClearing)
             return;
 
@@ -46,25 +46,23 @@ public class MatchManager : MonoBehaviour
     IEnumerator ClearAfterDelay(List<MatchBlock> blocks)
     {
         isClearing = true;
-
-        // 先冻结这些块，特别是 Sticky，避免在等待期间继续参与移动和黏连逻辑
-        foreach (var b in blocks)
+       foreach (var b in blocks)
         {
             if (b == null) continue;
 
-            // 禁用 Sticky 行为：不改源码，只把组件关掉
+       
             var sticky = b.GetComponent<Sticky>();
             if (sticky != null)
                 sticky.enabled = false;
 
-            // 禁止再被推动（Block 里的 canMove 是 public 的，允许改）
+       
             b.canMove = false;
         }
 
-        // 等待一小段时间，让玩家看到“连在一起了”
+    
         yield return new WaitForSeconds(clearDelay);
 
-        // 过滤已经被删掉的
+      
         var valid = new List<MatchBlock>();
         foreach (var b in blocks)
         {
@@ -72,20 +70,20 @@ public class MatchManager : MonoBehaviour
                 valid.Add(b);
         }
 
-        // 真正移除
+  
         if (valid.Count > 0)
         {
             SfxManager.PlayVanish();
             RemoveBlocks(valid);
         }
 
-        // 更新一次网格：此时 isClearing 仍为 true，所以本脚本的 GridChanged 不会再嵌套触发
+
         if (gridManager != null)
             gridManager.UpdateGrid();
 
         isClearing = false;
 
-        // 删除完成后检查是否全清
+       
         CheckWin();
     }
 
@@ -123,7 +121,7 @@ public class MatchManager : MonoBehaviour
     MatchBlock GetMatchBlock(Cell cell)
     {
         if (cell == null || cell.ContainObj == null) return null;
-        // 只看 ContainObj 本体上的 MatchBlock
+ 
         return cell.ContainObj.GetComponent<MatchBlock>();
     }
 
@@ -164,7 +162,7 @@ public class MatchManager : MonoBehaviour
         {
             if (b == null) continue;
 
-            // 从所在 Cell 解绑
+           
             Cell cell = null;
             if (b.transform.parent != null)
                 cell = b.transform.parent.GetComponent<Cell>();

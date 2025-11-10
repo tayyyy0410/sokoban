@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class InGameUI : MonoBehaviour
 {
     [Header("HUD")]
-    public GameObject hudRoot; //timer + restartbutton
+    public GameObject hudRoot; 
     public TMP_Text timerText;
 
     [Header("Panels")]
@@ -15,14 +15,14 @@ public class InGameUI : MonoBehaviour
 
     void Start()
     {
-        // 初始状态
+      
         if (hudRoot) hudRoot.SetActive(true);
         if (winPanel) winPanel.SetActive(false);
         if (finalWinPanel) finalWinPanel.SetActive(false);
         if (failPanel) failPanel.SetActive(false);
     }
 
-    // 给计时器更新显示
+ 
     public void UpdateTimer(float timeLeft)
     {
         if (!timerText) return;
@@ -34,7 +34,7 @@ public class InGameUI : MonoBehaviour
         timerText.text = $"{m:00}:{s:00}";
     }
 
-    // === 按钮回调 ===
+
     public void OnClickRestartLevel()
     {
      
@@ -59,7 +59,7 @@ public class InGameUI : MonoBehaviour
         GameManager.I.NextLevel();
     }
 
-    // === GameManager 调用 ===
+
 
     public void ShowLevelWin()
     {
